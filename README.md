@@ -31,12 +31,21 @@ should be likes this
 
 ```
 $vim Dockerfile
-
+```
+---
+```
 FROM centos
-RUN yum install httpd -y
-COPY website/ /var/www/html/
+
+RUN yum install wget -y
+RUN wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+RUN rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+RUN yum install java-11-openjdk -y
+RUN yum install jenkins -y
+RUN systemctl start jenkins 
+
 EXPOSE 80
-CMD httpd - DFOREGROUND 
+
+CMD cat /var/lib/jenkins/secrets/initialAdminPassword
 ````
 
 lets make build image using dockerfile with web service (httpd)
@@ -45,6 +54,13 @@ lets make build image using dockerfile with web service (httpd)
 $docker build -t webserver_image .
 ```
 note: dot means current directory
+
+check if docker launch in webserver_image is working or not 
+
+```
+docker run -dit --name web1 -p 8083:80  webserver_image
+```
+
 
 
 
