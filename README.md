@@ -39,13 +39,11 @@ FROM centos
 RUN yum install wget -y
 RUN wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 RUN rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
-RUN yum install java-11-openjdk -y
-RUN yum install jenkins -y
-RUN systemctl start jenkins 
+RUN yum install java -y && yum install jenkins -y && yum install git -y
+RUN echo -e "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-EXPOSE 80
 
-CMD cat /var/lib/jenkins/secrets/initialAdminPassword
+CMD ["java", "-jar", "/usr/lib/jenkins/jenkins.war"]
 ````
 
 lets make build image using dockerfile with web service (httpd)
@@ -55,11 +53,24 @@ $docker build -t webserver_image .
 ```
 note: dot means current directory
 
-check if docker launch in webserver_image is working or not 
+launch jenkins image with port 
 
 ```
-docker run -dit --name web1 -p 8083:80  webserver_image
+docker run -it --privileged -p 9999:8080 -v /:/host webserver_image
 ```
+
+it will automatic show initialAdminPassword
+
+```
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+9cbf4390692345a9865661c47737d76a
+
+This may also be found at: /root/.jenkins/secrets/initialAdminPassword
+```
+
+
 
 
 
