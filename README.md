@@ -13,15 +13,13 @@ warning - this only work in rhel 8 OS!
 first lets make create dir and after change directory web then create directory 'website' and create file 'Dockerfile'
 
 ```
-mkdir web
+$mkdir web
 
-cd web 
+$cd web 
 
-mkdir website
+$mkdir website
 
-touch Dockerfile
-
-
+$touch Dockerfile
 ```
 
 
