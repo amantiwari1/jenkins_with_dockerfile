@@ -12,6 +12,7 @@
 
 first lets make create dir and after change directory web then create directory 'website' and create file 'Dockerfile'
 
+## Create directory and File
 ```
 $mkdir web
 
@@ -24,16 +25,23 @@ $touch Dockerfile
 
 Create Simple index.html in Website Folder
 
+## Create Dockerfile
+
 now,
 need write code in dockerfile
 
 should be likes this 
 
+
 ```
 $vim Dockerfile
 ```
 ---
+
+
+
 ```
+
 FROM centos
 
 RUN yum install wget -y
@@ -50,12 +58,17 @@ RUN echo -e "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 CMD ["java", "-jar", "/usr/lib/jenkins/jenkins.war"]
 ````
 
+## Build Image using Dockerfile
+
 lets make build image using dockerfile with web service (httpd)
 
 ```
 $docker build -t webserver_image .
 ```
 note: dot means current directory
+
+
+## launch jenkins Images
 
 launch jenkins image with port 
 
@@ -74,7 +87,7 @@ Please use the following password to proceed to installation:
 This may also be found at: /root/.jenkins/secrets/initialAdminPassword
 ```
 ---
-## Now we have job in Jenkins
+# Now we Create job in Jenkins
 
 ## JOB 1
 
