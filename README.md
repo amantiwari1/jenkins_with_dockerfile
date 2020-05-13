@@ -76,7 +76,8 @@ This may also be found at: /root/.jenkins/secrets/initialAdminPassword
 ---
 ## Now we have job in Jenkins
 
-first job 
+## JOB 1
+
 
 create new job name is Job1 
 
@@ -96,6 +97,10 @@ create some shell in copy file
 
 ![git](images/ShooterScreenshot-36-13-05-20.png)
 
+
+## JOB 2
+
+
 now another job to start docker httpd images
 and copy it and run it server with port 
 ```
@@ -110,7 +115,7 @@ fi
 
 ![git](images/ShooterScreenshot-39-13-05-20.png)
 
-
+## JOB 3
 Job 3 is to test our application
 
 ```
@@ -126,8 +131,10 @@ fi
 
 ![git](images/ShooterScreenshot-38-13-05-20.png)
 
+## JOB 4
 
-if it is working in the test (jo3) then 
+
+if it is working in the test (joB3) then 
 
 it should run in shell like this 
 
