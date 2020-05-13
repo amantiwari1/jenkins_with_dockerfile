@@ -80,21 +80,21 @@ first job
 
 create new job name is Job1 
 
-![createjob](images\ShooterScreenshot-32-12-05-20.png)
+![createjob](images/ShooterScreenshot-32-12-05-20.png)
 
 copy and paste from github url : https://github.com/amantiwari1/jenkins_web_server..git
 
 go to Source Code Management and tick git
 
-![git](images\ShooterScreenshot-34-13-05-20.png)
+![git](images/ShooterScreenshot-34-13-05-20.png)
 
 now tick in GitHub hook trigger for GITScm polling
 
-![git](images\ShooterScreenshot-35-13-05-20.png)
+![git](images/ShooterScreenshot-35-13-05-20.png)
 
 create some shell in copy file
 
-![git](images\ShooterScreenshot-36-13-05-20.png)
+![git](images/ShooterScreenshot-36-13-05-20.png)
 
 now another job to start docker httpd images
 and copy it and run it server with port 
@@ -108,7 +108,7 @@ docker run -dit --name test_server -p 8081:80 -v "$PWD":/usr/local/apache2/htdoc
 fi
 ```
 
-![git](images\ShooterScreenshot-39-13-05-20.png)
+![git](images/ShooterScreenshot-39-13-05-20.png)
 
 
 Job 3 is to test our application
@@ -124,7 +124,7 @@ fi
 
 ```
 
-![git](images\ShooterScreenshot-38-13-05-20.png)
+![git](images/ShooterScreenshot-38-13-05-20.png)
 
 
 if it is working in the test (jo3) then 
@@ -134,7 +134,7 @@ it should run in shell like this
 ```
 systemctl restart httpd
 ```
-![git](images\ShooterScreenshot-40-13-05-20.png)
+![git](images/ShooterScreenshot-40-13-05-20.png)
 
 
 now i am going to build some pipelines
