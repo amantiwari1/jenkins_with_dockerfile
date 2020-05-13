@@ -69,6 +69,15 @@ Please use the following password to proceed to installation:
 
 This may also be found at: /root/.jenkins/secrets/initialAdminPassword
 ```
+---
+## Now we have job in Jenkins
+
+first job 
+
+create new job name is Job1
+
+
+
 
 
 
