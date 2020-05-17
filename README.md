@@ -162,7 +162,7 @@ systemctl restart httpd
 
 now i am going to build some pipelines
 
-![git](images/ShooterScreenshot-48-13-05-20.png)
+![git](images/ShooterScreenshot-48-17-05-20.png)
 
 
 
